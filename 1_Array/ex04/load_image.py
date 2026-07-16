@@ -19,11 +19,20 @@ def ft_load(path: str) -> np.ndarray:
         image = Image.open(path)
         assert image.format in ["JPEG", "JPG"], ERROR_FORMAT
 
-        image = image.convert("RGB")
-        array = np.array(image)
-        print("The shape of image is:", array.shape)
+        w, h = image.size
 
-        return array
+        left = w // 2 - 70
+        top = h // 2 - 280
+        right = left + 400
+        bottom = top + 400
+        image = image.crop((left, top, right, bottom))
+
+        arr = np.array(image.convert("L"))
+
+        arr_expand = np.expand_dims(arr, axis=-1)
+        print("The shape of image is:", arr_expand.shape, "or", arr.shape)
+        print(arr_expand)
+        return arr
 
     except FileNotFoundError:
         print("Error: file not found")

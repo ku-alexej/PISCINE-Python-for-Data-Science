@@ -7,7 +7,7 @@ ERROR_EMPTY_PATH = "path cannot be empty"
 ERROR_FORMAT = "only JPG and JPEG formats are supported"
 
 
-def ft_load(path: str) -> np.ndarray:
+def ft_load(path: str) -> Image.ImageFile:
     """
     Load an image, print its shape and return its RGB pixel array.
     """
@@ -23,7 +23,7 @@ def ft_load(path: str) -> np.ndarray:
         array = np.array(image)
         print("The shape of image is:", array.shape)
 
-        return array
+        return image
 
     except FileNotFoundError:
         print("Error: file not found")
