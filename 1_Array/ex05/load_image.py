@@ -22,6 +22,7 @@ def ft_load(path: str) -> np.ndarray:
         image = image.convert("RGB")
         array = np.array(image)
         print("The shape of image is:", array.shape)
+        print(array)
 
         return array
 
