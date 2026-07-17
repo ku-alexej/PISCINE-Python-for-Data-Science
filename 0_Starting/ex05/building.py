@@ -9,38 +9,38 @@ def main():
     punctuation characters, digits, and spaces.
     '''
 
+    try:
+        if len(sys.argv) > 2:
+            raise AssertionError("more than one argument is provided")
+        if len(sys.argv) == 2:
+            text = sys.argv[1]
+        else:
+            print("What is the text to count?")
+            try:
+                text = ""
+                while True:
+                    c = sys.stdin.read(1)
+                    if c == "":
+                        break
+                    text += c
+                    if c == '\n':
+                        break
+            except KeyboardInterrupt:
+                raise KeyboardInterrupt("Program terminated by user")
 
-try:
-    if len(sys.argv) > 2:
-        raise AssertionError("more than one argument is provided")
-    if len(sys.argv) == 2:
-        text = sys.argv[1]
-    else:
-        print("What is the text to count?")
-        try:
-            text = ""
-            while True:
-                c = sys.stdin.read(1)
-                if c == "":
-                    break
-                text += c
-                if c == '\n':
-                    break
-        except KeyboardInterrupt:
-            raise KeyboardInterrupt("Program terminated by user")
+        print(f"The text contains {len(text)} characters:")
+        print(f"{sum(1 for c in text if c.isupper())} upper letters")
+        print(f"{sum(1 for c in text if c.islower())} lower letters")
+        print(f"{sum(1 for c in text if c in punctuation)} punctuation marks")
+        print(f"{sum(1 for c in text if c.isspace())} spaces")
+        print(f"{sum(1 for c in text if c.isdigit())} digits")
 
-    print(f"The text contains {len(text)} characters:")
-    print(f"{sum(1 for c in text if c.isupper())} upper letters")
-    print(f"{sum(1 for c in text if c.islower())} lower letters")
-    print(f"{sum(1 for c in text if c in punctuation)} punctuation marks")
-    print(f"{sum(1 for c in text if c.isspace())} spaces")
-    print(f"{sum(1 for c in text if c.isdigit())} digits")
+    except AssertionError as e:
+        print(f"AssertionError: {e}")
 
-except AssertionError as e:
-    print(f"AssertionError: {e}")
+    except KeyboardInterrupt as e:
+        print(f"KeyboardInterrupt: {e}")
 
-except KeyboardInterrupt as e:
-    print(f"KeyboardInterrupt: {e}")
 
 if __name__ == "__main__":
     main()
