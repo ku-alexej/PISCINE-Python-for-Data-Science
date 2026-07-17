@@ -26,8 +26,8 @@ try:
                 text += c
                 if c == '\n':
                     break
-        except KeyboardInterrupt as e:
-            raise AssertionError("Program terminated by user") from e
+        except KeyboardInterrupt:
+            raise KeyboardInterrupt("Program terminated by user")
 
     print(f"The text contains {len(text)} characters:")
     print(f"{sum(1 for c in text if c.isupper())} upper letters")
@@ -38,6 +38,9 @@ try:
 
 except AssertionError as e:
     print(f"AssertionError: {e}")
+
+except KeyboardInterrupt as e:
+    print(f"KeyboardInterrupt: {e}")
 
 if __name__ == "__main__":
     main()

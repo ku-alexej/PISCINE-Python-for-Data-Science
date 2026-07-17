@@ -16,3 +16,7 @@ This repository contains my solutions for the **42 Python for Data Science - Mod
 | **ex07** | Encode text into Morse code using dictionaries and command-line arguments. |
 | **ex08** | Recreate a simplified version of the `tqdm` progress bar using generators (`yield`). |
 | **ex09** | Create and package a reusable Python module installable via `pip`. |
+
+```
+pip install typing tqdm setuptools build flake8
+```

@@ -3,7 +3,8 @@ import sys
 
 def main():
     '''
-        The program takes a string as an argument and encodes it into Morse Code
+    The program takes a string as an argument and
+    encodes it into Morse Code
     '''
 
     NESTED_MORSE = {
@@ -48,13 +49,9 @@ def main():
 
     try:
         assert len(sys.argv) == 2
-
         message = sys.argv[1]
-
         assert type(message) is str
-
         message = message.upper()
-
         assert all(c in NESTED_MORSE for c in message)
 
         print("".join(NESTED_MORSE[c] for c in message).rstrip())

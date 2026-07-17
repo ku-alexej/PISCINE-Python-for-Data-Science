@@ -4,8 +4,8 @@ from ft_filter import ft_filter
 
 def main():
     '''
-        The program outputs a list of words from S
-        that have a length greater than N.
+    The program outputs a list of words from S
+    that have a length greater than N.
     '''
     try:
         assert len(sys.argv) == 3
