@@ -8,5 +8,5 @@ setup(
     author_email="akurochk@student.42.fr",
     packages=find_packages(),
     license="MIT",
-    url="https://github.com/akurochk/ft_package",
+    url="https://github.com/ku-alexej/ft_package",
 )
