@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class Character(ABC):
-    """Character Class definition"""
+    """Representing a character in the Game of Thrones universe."""
 
     @abstractmethod
     def __init__(self, first_name: str, is_alive: bool = True):
@@ -16,7 +16,7 @@ class Character(ABC):
 
 
 class Stark(Character):
-    """Stark Class definition"""
+    """Representing the Stark family."""
 
     def __init__(self, first_name: str, is_alive: bool = True):
         """Constructor for Stark class. """
