@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    """
+    '''
     Function loads the life expectancy dataset and
     plots the life expectancy of France over the years.
-    """
+    '''
     try:
         df = load("life_expectancy_years.csv")
         if df is None:
