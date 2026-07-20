@@ -2,9 +2,6 @@ from load_csv import load
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
-MIN_YEAR = 1800
-MAX_YEAR = 2050
-
 
 def parse_population(value: str) -> float | None:
     '''
