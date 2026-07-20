@@ -1,12 +1,23 @@
 from abc import ABC, abstractmethod
+
+
 class Character(ABC):
+    """Character Class definition"""
+
+    @abstractmethod
+    def __init__(self, first_name: str, is_alive: bool = True):
+        """Constructor for Character class."""
+        self.first_name = first_name
+        self.is_alive = is_alive
+
+    def die(self):
+        """Die method for Character class sets the is_alive attribute to False."""
+        self.is_alive = False
 
 
-"""Your docstring for Class"""
-@abstractmethod
-# your code here
 class Stark(Character):
+    """Stark Class definition"""
 
-
-"""Your docstring for Class"""
-# your code here
+    def __init__(self, first_name: str, is_alive: bool = True):
+        """Constructor for Stark class. """
+        super().__init__(first_name, is_alive)
