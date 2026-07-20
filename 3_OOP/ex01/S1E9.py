@@ -19,5 +19,5 @@ class Stark(Character):
     """Representing the Stark family."""
 
     def __init__(self, first_name: str, is_alive: bool = True):
-        """Constructor for Stark class. """
+        """Constructor for Stark class."""
         super().__init__(first_name, is_alive)

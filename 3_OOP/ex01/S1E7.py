@@ -41,5 +41,4 @@ class Lannister(Character):
     @classmethod
     def create_lannister(cls, first_name: str, is_alive: bool = True):
         """Creates a new Lannister character."""
-
         return cls(first_name, is_alive)
