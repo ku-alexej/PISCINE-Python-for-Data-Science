@@ -29,12 +29,12 @@ def main():
         gray = image.convert("L")
         arr = np.array(gray)
         arr = arr[y:y + 400, x:x + 400]
-        arr = arr[:, :, np.newaxis]
+        arr_extended = arr[:, :, np.newaxis]
 
-        print(f"New shape after slicing: {arr.shape}")
-        print(arr)
+        print(f"New shape after slicing: {arr_extended.shape} or {arr.shape}")
+        print(arr_extended)
 
-        plt.imshow(arr, cmap="gray")
+        plt.imshow(arr_extended, cmap="gray")
         plt.show()
 
     except Exception as e:

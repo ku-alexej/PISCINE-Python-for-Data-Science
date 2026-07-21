@@ -2,10 +2,8 @@ import numpy as np
 
 
 def ft_invert(array) -> np.ndarray:
-    '''
-    Invert the colors of an RGB image represented as a NumPy array.
-    Allowed operators: = + - *
-    '''
+    '''Inverts the color of the image received.'''
+
     result = array.copy()
     result = 255 - result
 
@@ -13,10 +11,7 @@ def ft_invert(array) -> np.ndarray:
 
 
 def ft_red(array) -> np.ndarray:
-    '''
-    Extract the red channel from an RGB image represented as a NumPy array.
-    Allowed operators: = *
-    '''
+    '''Extract the red channel of the image.'''
     result = array.copy()
 
     result[:, :, 1] = result[:, :, 1] * 0
@@ -26,10 +21,8 @@ def ft_red(array) -> np.ndarray:
 
 
 def ft_green(array) -> np.ndarray:
-    '''
-    Extract the green channel from an RGB image represented as a NumPy array.
-    Allowed operators: = -
-    '''
+    '''Extract the green channel of the image.'''
+
     result = array.copy()
 
     result[:, :, 0] = result[:, :, 0] - result[:, :, 0]
@@ -39,10 +32,8 @@ def ft_green(array) -> np.ndarray:
 
 
 def ft_blue(array) -> np.ndarray:
-    '''
-    Extract the blue channel from an RGB image represented as a NumPy array.
-    Allowed operators: =
-    '''
+    '''Extract the blue channel of the image.'''
+
     result = array.copy()
 
     result = ft_green(ft_red(result))
@@ -52,10 +43,8 @@ def ft_blue(array) -> np.ndarray:
 
 
 def ft_grey(array) -> np.ndarray:
-    '''
-    Convert an RGB image represented as a NumPy array to grayscale.
-    Allowed operators: = /
-    '''
+    '''Convert the image to grayscale.'''
+
     result = array.copy()
 
     red = ft_red(array)

@@ -3,7 +3,7 @@ from PIL import UnidentifiedImageError
 import numpy as np
 
 
-def ft_load(path: str) -> Image.ImageFile:
+def ft_load(path: str) -> Image:
     """
     Load an image, print its shape and return its RGB pixel array.
     """
