@@ -2,10 +2,6 @@ from PIL import Image
 from PIL import UnidentifiedImageError
 import numpy as np
 
-ERROR_PATH = "path must be a string"
-ERROR_EMPTY_PATH = "path cannot be empty"
-ERROR_FORMAT = "only JPG and JPEG formats are supported"
-
 
 def ft_load(path: str) -> np.ndarray:
     """
@@ -13,11 +9,14 @@ def ft_load(path: str) -> np.ndarray:
     """
 
     try:
-        assert isinstance(path, str), ERROR_PATH
-        assert path.strip(), ERROR_EMPTY_PATH
+        assert isinstance(path, str), \
+            "path must be a string"
+        assert path.strip(), \
+            "path cannot be empty"
 
         image = Image.open(path)
-        assert image.format in ["JPEG", "JPG"], ERROR_FORMAT
+        assert image.format in ["JPEG", "JPG"], \
+            "only JPG and JPEG formats are supported"
 
         image = image.convert("RGB")
         array = np.array(image)

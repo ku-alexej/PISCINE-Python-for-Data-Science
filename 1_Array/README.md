@@ -11,3 +11,7 @@ This repository contains my solutions for the 42 Python for Data Science - Modul
 | ex03 | Crop, zoom, and display a grayscale section of an image while preserving image information. |
 | ex04 | Crop and manually transpose an image without using built-in transpose functions. |
 | ex05 | Apply basic image filters (invert, red, green, blue, and grayscale) while maintaining the original image shape. |
+
+```bash
+pip install matplotlib numpy PIL
+```
