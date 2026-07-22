@@ -7,7 +7,8 @@ def format_thousands(value: float, pos: int) -> str:
     '''
     Format y-axis labels in thousands.
     '''
-    return f"{int(value / 1_000)}k"
+    res = f"{int(value / 1_000)}k" if value >= 1_000 else str(int(value))
+    return res
 
 
 def validate_dataframe(df, name: str, column: str) -> str | None:
@@ -97,6 +98,7 @@ def main():
     fig.canvas.mpl_connect("motion_notify_event", on_hover)
 
     ax.set_xscale("log")
+    ax.set_xticks([300, 1000, 10000])
     ax.xaxis.set_major_formatter(FuncFormatter(format_thousands))
 
     plt.xlabel("Gross domestic product")

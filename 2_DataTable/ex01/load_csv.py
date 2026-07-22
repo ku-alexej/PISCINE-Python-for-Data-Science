@@ -2,7 +2,8 @@ import pandas as pd
 
 
 def load(path: str) -> pd.DataFrame:
-    '''Function that loads a data file, prints it shape and returns a dataset object.'''
+    '''Function that loads a data file,
+    prints it shape and returns a dataset object.'''
 
     try:
         df = pd.read_csv(path)
